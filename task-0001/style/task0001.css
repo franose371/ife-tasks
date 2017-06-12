@@ -1,3 +1,8 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
 h1 {
 	color: blue;
 }
@@ -14,4 +19,97 @@ p {
 
 img {
 	border: 2px solid red;
+}
+
+/*使middle-div居中的第一种方法
+#middle-div {
+	width: 960px;
+	margin: 0 auto;
+	background-color: red;
+	height: 50%;
+}*/
+
+#parent {
+	height: 100%;
+	width: 100%;
+}
+
+#middle-div {
+	position: relative;
+	width: 960px;
+	height: 50%;
+	background-color: red;
+}
+
+#round {
+	margin: 0;
+	border: black solid 6px;
+	border-top-width: 5px;
+	background-color: black;
+
+}
+
+.b1 {
+	width: 1px;
+	height: 9px;;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+
+.b2 {
+	width: 1px;
+	height: 6px;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+
+.b3 {
+	width: 1px;
+	height: 5px;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+
+.b4 {
+	width: 1px;
+	height: 4px;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+
+.b5 {
+	width: 1px;
+	height: 3px;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+
+.b6 {
+	width: 1px;
+	height: 2px;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+
+.b7 {
+	width: 3px;
+	height: 1px;;
+	background-color: white;
+	float: left;
+	overflow: hidden;
+}
+.bottomleft {
+	position: bottom left;
+	margin-top: -3px;
+}
+
+#exam {
+	border: red solid 3px;
+	border-radius: 6px;
 }
