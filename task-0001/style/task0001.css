@@ -368,3 +368,18 @@ img {
 	width: 100%;
 	background-color: green;
 }
+
+/*浮动布局*/
+
+.flex-container {
+	display: flex;
+	background-color: red;
+	flex-wrap: wrap;
+}
+
+.flex-item {
+	background-color: blue;
+	width: 200px;
+	height: 50px;
+	margin: 5px;
+}

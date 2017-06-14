@@ -1,0 +1,126 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 980px) {
+	.githubicon {
+		display: none;
+	}
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	width: 100%;
+	height: 80px;
+}
+
+nav {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+
+nav ul{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	margin-bottom: 5px;
+}
+
+nav li {
+	display: inline-block;
+	font-size: 14px;
+}
+
+header img {
+	position: relative;
+	bottom: 0px;
+}
+
+.container {
+	max-width: 980px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.mylogo {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	margin-bottom: 5px;
+}
+
+.githubicon {
+	float: right;
+	padding-top: 46px;
+	padding-right: 10px;
+}
+
+.banner {
+	background-image: url(../images/banner-bg.jpg);
+	max-width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+
+.banner .container {
+	position: relative;
+}
+
+.trans-font {
+	padding: 10px 10px 30px 10px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 350px;
+	background:-webkit-linear-gradient(  
+    left bottom,   
+    rgba(255,255,255,0.7) 100%,   
+    rgba(255,255,255,0.5) 75%,   
+    rgba(255,255,255,0) 0%); 
+    background-image: linear-gradient( 
+    left bottom,   
+    rgba(255,255,255,0.7) 100%,   
+    rgba(255,255,255,0.5) 75%,   
+    rgba(255,255,255,0) 0%); 
+}
+
+.trans-title {
+	text-align: right;
+}
+
+.trans-text {
+	margin-top: 12px;
+}
+
+.cols-block-3 {
+	width: auto;
+	height: auto;
+}
+
+.cols-block-3 .container {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 990px;
+}
+
+.white-block {
+	width: 320px;
+	margin: 10px 5px;
+}
+
+.cols-content {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.cols-content p{
+	padding: 15px 15px 25px 15px;
+	text-align: left;
+}
