@@ -110,3 +110,7 @@ footer {
  .tag-name {
  	color: #4B0082;
  }
+
+ .aside-nav ul li {
+	color: gray;
+ }
