@@ -11,7 +11,7 @@
 
 body, html {
 	width: 100%;
-	height: 100%;
+/*	height: 100%;*/
 }
 
 header {
@@ -43,6 +43,17 @@ header img {
 	bottom: 0px;
 }
 
+hr {
+	height: .5px;
+	background-color: white;
+	border: none;
+}
+
+footer {
+	width: 100%;
+}
+
+/*HOME页面*/
 .container {
 	max-width: 980px;
 	height: 100%;
@@ -63,10 +74,13 @@ header img {
 }
 
 .banner {
-	background-image: url(../images/banner-bg.jpg);
-	max-width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
+	width: 100%;
+	height: 868px;
+	background: url(../images/banner-bg.jpg) no-repeat;
+/*	max-width: 100%;
+	height: 100%;*/
+	background-size: 100% 100%;
+	overflow: hidden;
 }
 
 .banner .container {
@@ -80,12 +94,12 @@ header img {
 	right: 0px;
 	width: 350px;
 	background:-webkit-linear-gradient(  
-    left bottom,   
+    to bottom,   
     rgba(255,255,255,0.7) 100%,   
     rgba(255,255,255,0.5) 75%,   
     rgba(255,255,255,0) 0%); 
     background-image: linear-gradient( 
-    left bottom,   
+    to bottom,   
     rgba(255,255,255,0.7) 100%,   
     rgba(255,255,255,0.5) 75%,   
     rgba(255,255,255,0) 0%); 
@@ -108,6 +122,7 @@ header img {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 990px;
+	padding-bottom: 200px;
 }
 
 .white-block {
@@ -124,3 +139,236 @@ header img {
 	padding: 15px 15px 25px 15px;
 	text-align: left;
 }
+
+.self-intro {
+	background-color: white;
+	width: 100%;
+	padding-bottom: 185px;
+}
+
+.self-portrait {
+	text-align: center;
+}
+
+.self-portrait img{
+	margin-top: -30px;
+	margin-bottom: 50px;
+	text-align: center;
+	border-radius: 80px;
+}
+
+.intro-title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.intro-content {
+	width: 600px;
+	margin: 0 auto;
+}
+
+
+
+.footer-nav {
+	width: 100%;
+	height: 35px;
+}
+
+.footer-nav ul {
+	width: 100%;
+	text-align: center;
+}
+
+.footer-nav ul li {
+	font-size: 12px;
+}
+
+.links {
+	width: 100%;
+	height: 290px;
+}
+
+.links .container {
+	display: flex;
+}
+
+
+.link-block {
+	width: 76px;
+	margin: 40px 50px;
+	height: 250px;
+	font-size: 12px;
+	color: white;
+}
+
+.link-block ul {
+	list-style: none;
+}
+
+.link-block ul li {
+	margin: 7px 0;
+}
+
+
+.link-content {
+	margin-top: 20px;
+}
+
+.link-block ul li a {
+	text-decoration: none;
+	color: white; 
+}
+
+.link-block ul li a:hover {
+	text-decoration: underline;
+	text-align: center;
+}
+
+.copyright {
+	text-align: center;
+	height: 70px;
+	width: 100%;
+}
+
+.copyright-block {
+	background-image: url(../images/icon-github.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+/* BLOG页面 */
+.blog-cols-2 {
+	display: flex;
+	margin-top: 10px;
+	height: 100%;
+	margin-bottom: 400px;
+}
+
+.blogs {
+	width: 710px;
+	margin-top: 0px;
+}
+
+.blog-block {
+	width: 710px;
+	background-color: white;
+}
+
+.blog-content {
+	margin: 10px 15px;
+	padding: 20px 0px;
+}
+
+.blog-title {
+	margin-bottom: 10px;
+}
+
+.sub-title {
+	margin-bottom: 20px;
+}
+
+.blog-text {
+	text-indent: 2em;
+	padding: 0;
+}
+
+.blog-tag {
+	width: 50px;
+	color: white;
+	text-align: center;
+	margin-left: -50px;
+	margin-top: 20px;
+	float: left;
+}
+
+.blog-date {
+	height: 40px;
+}
+
+.blog-category {
+	height: 40px;
+}
+
+.blog-date p {
+	padding-top: 10px;
+}
+
+.blog-category p {
+	padding-top: 10px;
+}
+
+.page-no {
+	padding: 10px 15px;
+}
+
+.pages-block {
+	width: 100%;
+	text-align: center;
+}
+
+.pages {
+	margin: 0px auto;
+}
+
+/*侧边导航*/
+ aside {
+ 	width: 260px;
+ 	margin-left: 10px;
+ }
+
+ .search {
+ 	background-color: white;
+ 	margin-top: 10px;
+ 	padding: 20px;
+ }
+
+ .search input {
+ 	width: 200px;
+ 	height: 40px;
+ }
+
+.aside-nav {
+	margin-top: 10px;
+}
+
+ .aside-nav ul{
+ 	display: block;
+ 	list-style: none;
+ }
+
+ .aside-nav ul li {
+	padding: 20px;
+ }
+
+ .nav-line {
+ 	float: left;
+ 	width: 5px;
+ 	height: 60px;
+ 	margin-top: -20px;
+ 	margin-left: -20px;
+ }
+
+ .date-frame {
+ 	margin-top: 10px;
+ }
+
+.date-content {
+	padding: 20px;
+}
+
+.date-frame td {
+ 	font-weight: normal;
+  	border-bottom: solid 1px lightgray;
+  	padding: 15px 6.5px;
+ }
+
+ .tags {
+ 	display: flex;
+ 	margin-top: 10px;
+ 	width: 260px;
+ 	flex-wrap: wrap;
+ }
+
+ .tag-name {
+ 	margin: 10px;
+ }

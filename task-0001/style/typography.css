@@ -1,3 +1,12 @@
+body {
+	font-family: "微软雅黑", Serif;
+}
+
+.mylogo {
+	font-size: 28px;
+	font-family: "Times New Roman", Serif;
+}
+
 .trans-title {
 	font-size: 14px;
 }
@@ -10,4 +19,49 @@
 p.cols-text {
 	font-size: 12px;
 	line-height: 170%;
+}
+
+.intro-title {
+	font-size: 20px;
+}
+
+.intro-content {
+	font-size: 14px;
+}
+
+.copyright {
+	font-size: 12px;
+}
+
+.blog-title {
+	font-size: 16px;
+}
+
+.sub-title {
+	font-size: 12px;
+}
+
+.blog-text {
+	font-size: 14px;
+}
+
+.page-no {
+	font-size: 10px;
+	font-family: "宋体", sans-serif;
+}
+
+.date-frame table {
+	font-size: 10px;
+}
+
+td.marked-date {
+	font-weight: bold;
+}
+
+.tag-bold {
+	font-weight: bold;
+}
+
+.tag-big {
+	font-size: 2em;
 }

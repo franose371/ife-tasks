@@ -1,3 +1,7 @@
+body {
+	background-color: #F5F5F5;
+}
+
 header {
 	background-color: #4B0082;
 }
@@ -6,6 +10,10 @@ header {
 nav li {
 	color: white;
 	margin: 0 14px;
+}
+
+footer {
+	background-color: black;
 }
 
 .mylogo {
@@ -22,4 +30,83 @@ nav li {
 }
 
 .cols-block-3 {
-	background-color: #DCDCDC;
+	background-color: #F5F5F5;
+}
+
+.link-title {
+	color: #F5F5F5;
+}
+
+.copyright {
+	color: white;
+}
+
+.sub-title {
+	color: #696969;
+}
+
+.blog-title {
+	color: #a660b7;
+}
+
+.blog-date {
+	background-color: #522a5c;
+}
+
+.blog-category {
+	background-color: #a660b7;
+}
+
+.page-no {
+	background-color: white;
+}
+
+.disabled {
+	color: gray;
+}
+
+.current-page {
+	background-color: #a660b7;
+	color: white;
+}
+
+ .search {
+ 	background-color: white;
+ }
+
+  .aside-nav ul li {
+	background-color: white;
+ }
+
+ .nav-line {
+ 	background-color: lightgray;
+ }
+
+ .current-nav {
+ 	background-color: #4B0082;
+ }
+
+ .date-frame {
+ 	background-color: white;
+ 	color: gray;
+ }
+
+ .date-frame th {
+ 	color: #4B0082;
+ }
+
+ .today {
+ 	background-color: #4B0082;
+ 	color: white;
+ }
+
+ .marked-date {
+ 	color: #4B0082;
+ }
+
+ .tags {
+	background-color: white;
+ }
+ .tag-name {
+ 	color: #4B0082;
+ }
