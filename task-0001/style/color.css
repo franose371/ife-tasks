@@ -114,3 +114,43 @@ footer {
  .aside-nav ul li {
 	color: gray;
  }
+
+/*标签未激活时的颜色*/
+ .gallery-tag.all{
+ 	border-color: #dfc6e6;
+ }
+
+ .gallery-tag.jscript {
+ 	border-color: #dfc6e6;
+ }
+
+ .gallery-tag.uicomponents {
+ 	border-color: #d2a6ff;
+ }
+
+ .gallery-tag.framework {
+	border-color: #ffa98c;
+ }
+
+ .gallery-tag.apps {
+ 	border-color: #ffe188;
+ }
+
+ .all.activated {
+	border-color: #522a5c;
+ }
+
+ .jscript.activated {
+ 	border-color: #522a5c;
+ }
+ .uicomponents.activated {
+	border-color: #5900b2;
+ }
+
+ .framework.activated {
+	border-color: #8c2300;
+ }
+
+ .apps.activated {
+ 	border-color: #d9a300;
+ }

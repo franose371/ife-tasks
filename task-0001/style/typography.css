@@ -64,3 +64,11 @@ td.marked-date {
 .tag-big {
 	font-size: 2em;
 }
+
+ .search input {
+ 	font-size: 12px;
+ }
+
+ .gallery-tag {
+ 	font-size: 14px;
+ }
