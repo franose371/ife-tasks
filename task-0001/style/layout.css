@@ -320,7 +320,7 @@ aside {
 .search input {
     width: 130px;
     height: 39px;
-    background-image: url(../images/portrait.png);
+    background-image: url(../images/search-icon.png);
     background-size: 40px 40px;
     background-repeat: no-repeat;
     border: solid 1px lightgray;
@@ -329,10 +329,10 @@ aside {
 }
 
 .search-btn {
-    background-image: url(../images/icon-github.png);
+    background-image: url(../images/search-button.png);
     border: none;
     width: 48px;
-    height: 40px;
+    height: 41px;
     float: right;
 }
 
@@ -388,6 +388,10 @@ aside {
 
 /*gallery页面*/
 
+.gallery {
+	width: 710px;
+}
+
 .gallery-cols-2 {
     display: flex;
     margin-top: 70px;
@@ -405,6 +409,139 @@ aside {
     border-top: 5px solid;
 }
 
-.gallery-block {
-    background-color: white;
+.gallery-waterfall {
+	background-color: white;
+	margin-top: 10px;
+	height: 800px;
+}
+
+.waterfall-box-1 {
+	margin-left: 20px;
+	float: left;
+	padding-top: 20px;
+	width: 340px;
+   -webkit-column-width: 160px;
+   -moz-column-width: 160px;
+   -o-column-width: 160px;
+   -ms-column-width: 160px;
+   column-width: 160px; 
+   column-gap: 0px;
+}
+
+.waterfall-box-2 {
+	padding-top: 20px;
+	width: 340px;
+	column-width: 160px;
+   -moz-column-width: 160px;
+   -o-column-width: 160px;
+   -ms-column-width: 160px;
+   column-width: 160px; 
+   column-gap: 0px;
+}
+
+.item {
+	-moz-page-break-inside: avoid;
+    -webkit-page-break-inside: avoid;
+    break-inside: avoid;
+    height: auto;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.item-large {
+	column-span: all;
+}
+
+.item-large-content {
+	margin-top: -5px;
+	margin-bottom: 10px;	
+	margin-right: 10px;
+	padding-top: 12.5px;
+	padding-bottom: 15px;
+}
+
+.item-content {
+	margin-top: -5px;
+	margin-bottom: 10px;
+	padding-top: 12.5px;
+	padding-bottom: 15px;
+}
+
+.item-icon{
+	float: left;
+	border-width: 1px;
+	margin-left: 10px;
+	border-style: solid;
+	border-radius: 25px;
+	text-align: center;
+	width: 25px;
+	height: 25px;
+}
+
+.item-text {
+	margin-left: 50px;
+	margin-right: 12.5px;
+}
+
+/*侧边栏排行榜*/
+
+.aside-rank {
+	margin-top: 10px;
+	padding-bottom: 40px;
+}
+
+ .rank-title {
+ 	margin-bottom: 25px;
+ 	padding-top: 20px;
+ 	margin-left: 12.5px;
+ }
+
+.aside-rank span {	
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin-left: 12.5px;
+	margin-right: 12.5px;
+	border-radius: 15px;
+	text-align: center;
+}
+
+.aside-rank ol li {
+	list-style-type: none;
+	display: inline-block;
+	margin-top: 12.5px;
+}
+
+.rank-bar {
+	height: 18px;
+	width: 100px;
+	float: left;
+	margin-right: 10px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.rank-bar div {
+	height: 100%;
+}
+
+.gallery-more {
+	margin-top: 10px;
+	height: 50px;
+	background-color: white;
+	text-align: center;
+}
+
+.more-block {
+	width: 150px;
+	margin: 0 auto;
+}
+
+.more-block img {
+	float: left;
+	margin-top: 5px;
+}
+
+.more-block p {
+	padding: 12.5px;
 }

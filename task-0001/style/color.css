@@ -136,15 +136,48 @@ footer {
  	border-color: #ffe188;
  }
 
+  .item-content.all.activated {
+ 	background-color: #d9a300;
+	color: white;
+ }
+
  .all.activated {
 	border-color: #522a5c;
  }
 
- .jscript.activated {
+
+
+ .item-large-content.jscript.activated {
+ 	background-color:#522a5c;
+ 	color: white;
+ }
+
+ .item-content.jscript.activated {
+ 	background-color:#522a5c;
+ 	color: white;
+ }
+
+  .jscript.activated {
  	border-color: #522a5c;
  }
+
+ .item-content.uicomponents.activated {
+	background-color: #5900b2;
+	color: white;
+ }
+
  .uicomponents.activated {
 	border-color: #5900b2;
+ }
+
+ .item-content.framework.activated {
+ 	background-color: #8c2300;
+ 	color: white;
+ }
+
+ .item-content.framework.activated {
+	background-color: #8c2300;
+	color: white;
  }
 
  .framework.activated {
@@ -152,5 +185,39 @@ footer {
  }
 
  .apps.activated {
+ 	background-color: #d9a300;
+ 	color: white; 
+ }
+
+ .apps.activated {
  	border-color: #d9a300;
  }
+
+ .item-icon {
+ 	border-color: white;
+ }
+
+ .rank-title {
+ 	color: gray;
+ }
+
+.aside-rank {
+	background-color: white;
+}
+
+ .aside-rank span {
+ 	background-color: #522a5c;
+ 	color: white;
+ }
+
+ .rank-bar div {
+	background-color: #522a5c;
+}
+
+.gallery-more {
+	background-color: white;
+}
+
+.more-block p {
+	color: gray;
+}
