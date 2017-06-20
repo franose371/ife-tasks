@@ -545,3 +545,78 @@ aside {
 .more-block p {
 	padding: 12.5px;
 }
+
+/*about页面*/
+
+.about-block {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-item-title-img img{
+    border-radius: 150px;
+    margin: 0 auto;
+    margin-top: -60px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #F5F5F5;
+}
+
+.about-round-img img{
+    border-radius: 150px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #F5F5F5;
+}
+
+.about-item-text {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.about-item-left {
+    float: left;
+}
+
+.about-item-right {
+    width: 300px;
+    float: right;
+    margin-right: -200px;
+}
+
+.about-vertical-line {
+    height: 200px;
+    width: 5px;
+    background-color: #F5F5F5;
+    margin: 0 auto;
+    margin-top: -5px;
+}
+
+.about-vertical-line-short {
+    height: 60px;
+    width: 5px;
+    background-color: #F5F5F5;
+    margin: 0 auto;
+    margin-top: -5px;
+}
+
+.about-vertical-block {
+    text-align: center;
+}
+
+.about-vertical-text{
+    margin: 0 auto;
+    width: 60px;
+    border: solid 5px #F5F5F5;
+    border-radius: 10px;
+}
+
+.about-vertical-right {
+    float: right;
+    margin-top: -25px;
+}
