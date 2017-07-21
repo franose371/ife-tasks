@@ -68,15 +68,14 @@ function uniqArray(arr) {
 
 
 function trim(str) {
-	var reg = /\s/g;
-	var mystr = str.replace(reg, "");
-	return mystr;
+	var reg = /^\s+|\s+$/g;
+	return str.replace(reg, "");
 }
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
-	for (index in arr) {
-		fn(arr[index], index);
+	for (var i = 0, length1 = arr.length; i < length1; i++) {
+		fn(arr[i], i);
 	}
 }
 
@@ -145,50 +144,140 @@ function getPosition(element) {
 	return offposition;
 }
 
-// 实现一个简单的Query
 function $(selector) {
 	//handle the combine query
-	var selectors = selector.split(" ");
-	var ids = new Array();
-	for (var i = 0, length1 = selectors.length; i < length1; i++) {
-		if (selectors[i].indexOf("#") != -1) {
-			//delete #
-			var text = selectors[i].replace(/^\#/, "");
-			ids[0] = document.getElementById(text);
-		} else if (selectors[i].indexOf(".") != -1) {
-			//delete .
-			var text = selectors[i].replace(/^\./, "");
-			ids = document.getElementsByClassName(text);
-		} else if (selectors[i].indexOf("[") != -1) {
-			//get all the elements
-			var eles = document.getElementsByTagName("*");
-			selectors[i] = selectors[i].replace(/^\[/, "");
-			selectors[i] = selectors[i].replace(/\]$/, "");
-			var dates = selectors[i].split("=");
-			var atr = dates[0];
-			var value = dates[1];
-			if (value) {
-				for (var i = 0, length1 = eles.length; i < length1; i++) {
-					if (eles[i].hasAttribute(atr)) {
-						if (eles[i].getAttribute(atr) == value) {
-							ids[0] = eles[i];
-						}
+	if (selector.indexOf(" ") != -1) {
+		var selectors = selector.split(" ");
+		var ids = new Array();
+		for (i = 0; i < selectors.length; i++) {
+			// how to use traversal????
+			ids[i] = $(selectors[i]); //selector = "#adom"
+		}
+		return ids;
+	} else if (selector.indexOf("#") != -1) {
+		//delete #
+		var text = selector.replace(/^\#/, "");
+		var id = document.getElementById(text);
+		return id;
+	} else if (selector.indexOf(".") != -1) {
+		//delete .
+		var text = selector.replace(/^\./, "");
+		var ids = document.getElementsByClassName(text);
+		return ids[0];
+	} else if (selector.indexOf("[") != -1) {
+		//get all the elements
+		var eles = document.getElementsByTagName("*");
+		selector = selector.replace(/^\[/, "");
+		selector = selector.replace(/\]$/, "");
+		var dates = selector.split("=");
+		var atr = dates[0];
+		var value = dates[1];
+		if (value) {
+			for (var i = 0, length1 = eles.length; i < length1; i++) {
+				if (eles[i].hasAttribute(atr)) {
+					if (eles[i].getAttribute(atr) == value) {
+						return eles[i];
 					}
 				}
-			} else {
-				for (var i = 0, length1 = eles.length; i < length1; i++) {
-					if (eles[i].hasAttribute(atr)) {
-						ids[0] = eles[i];
-					}
-				}
-
 			}
 		} else {
-			ids = document.getElementsByTagName(selectors[i]);
+			for (var i = 0, length1 = eles.length; i < length1; i++) {
+				if (eles[i].hasAttribute(atr)) {
+					return eles[i];
+				}
+			}
 		}
+	} else {
+		var ids = document.getElementsByTagName(selector);
+		return ids[0];
 	}
-	return ids[0];
 }
+
+
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+	var myelement = element;
+	if (event === "click") {
+		myelement.onclick = listener(event);
+	}
+}
+
+// // 例如：
+function clicklistener(event) {
+	//...
+	if (event === "click") {
+		alert("clicking");
+	}
+
+}
+
+addEvent($("#doma"), "click", clicklistener);
+
+// 移除element对象对于event事件发生时执行listener的响应
+function removeEvent(element, event, listener) {
+	// your implement
+}
+
+
+// // 实现一个简单的Query
+// function $(selector) {
+// 	//handle the combine query
+// 	var selectors = selector.split(" ");
+// 	var ids = new Array();
+// 	for (var i = 0, length1 = selectors.length; i < length1; i++) {
+// 		//multiple selectors
+// 		if (selectors.length > 1) {
+// 			for (var i = 0, length1 = selectors.length; i < length1; i++) {
+// 				switch (selectors.[i]) {
+// 					case "label_1":
+// 						// statements_1
+// 						break;
+// 					default:
+// 						// statements_def
+// 						break;
+// 				}
+// 			}
+
+// 		}
+
+// 		if (selectors[i].indexOf("#") != -1) {
+// 			//delete #
+// var text = selectors[i].replace(/^\#/, "");
+// ids[0] = document.getElementById(text);
+// 		} else if (selectors[i].indexOf(".") != -1) {
+// 			//delete .
+// 			var text = selectors[i].replace(/^\./, "");
+// 			ids = document.getElementsByClassName(text);
+// 		} else if (selectors[i].indexOf("[") != -1) {
+// 			//get all the elements
+// 			var eles = document.getElementsByTagName("*");
+// 			selectors[i] = selectors[i].replace(/^\[/, "");
+// 			selectors[i] = selectors[i].replace(/\]$/, "");
+// 			var dates = selectors[i].split("=");
+// 			var atr = dates[0];
+// 			var value = dates[1];
+// 			if (value) {
+// 				for (var i = 0, length1 = eles.length; i < length1; i++) {
+// 					if (eles[i].hasAttribute(atr)) {
+// 						if (eles[i].getAttribute(atr) == value) {
+// 							ids[0] = eles[i];
+// 						}
+// 					}
+// 				}
+// 			} else {
+// 				for (var i = 0, length1 = eles.length; i < length1; i++) {
+// 					if (eles[i].hasAttribute(atr)) {
+// 						ids[0] = eles[i];
+// 					}
+// 				}
+
+// 			}
+// 		} else {
+// 			ids = document.getElementsByTagName(selectors[i]);
+// 		}
+// 	}
+// 	return ids[0];
+// }
 
 // // 可以通过id获取DOM对象，通过#标示，例如
 // $("#adom"); // 返回id为adom的DOM对象
