@@ -144,154 +144,143 @@ function getPosition(element) {
 	return offposition;
 }
 
-function $(selector) {
-	//handle the combine query
-	if (selector.indexOf(" ") != -1) {
-		var selectors = selector.split(" ");
-		var ids = new Array();
-		for (i = 0; i < selectors.length; i++) {
-			// how to use traversal????
-			ids[i] = $(selectors[i]); //selector = "#adom"
-		}
-		return ids;
-	} else if (selector.indexOf("#") != -1) {
-		//delete #
-		var text = selector.replace(/^\#/, "");
-		var id = document.getElementById(text);
-		return id;
-	} else if (selector.indexOf(".") != -1) {
-		//delete .
-		var text = selector.replace(/^\./, "");
-		var ids = document.getElementsByClassName(text);
-		return ids[0];
-	} else if (selector.indexOf("[") != -1) {
+function domQuery(selector, root) {
+	var text;
+	var elements = [];
+	//if root is not defined, root = document
+	if (!root) {
+		root = document;
+	}
+	if (selector.charAt(0) === "#") {
+		text = selector.replace(/^\#/, "");
+		elements = root.getElementById(text);
+	} else if (selector.charAt(0) === ".") {
+		text = selector.replace(/^\./, "");
+		elements = root.getElementsByClassName(text);
+	} else if ((selector.charAt(0) === "[") && (selector.charAt(selector.length - 1) === "]")) {
 		//get all the elements
-		var eles = document.getElementsByTagName("*");
+		var eles = root.getElementsByTagName("*");
+		//delete "[" and "]"
 		selector = selector.replace(/^\[/, "");
 		selector = selector.replace(/\]$/, "");
-		var dates = selector.split("=");
-		var atr = dates[0];
-		var value = dates[1];
-		if (value) {
+
+		var texts = selector.split("=");
+		var attr = texts[0];
+		var value = texts[1];
+		//有属性值的情况
+		if (texts[1]) {
 			for (var i = 0, length1 = eles.length; i < length1; i++) {
-				if (eles[i].hasAttribute(atr)) {
-					if (eles[i].getAttribute(atr) == value) {
-						return eles[i];
+				if (eles[i].hasAttribute(attr)) {
+					if (eles[i].getAttribute(attr) === value) {
+						elements = eles[i];
 					}
 				}
 			}
-		} else {
+		}
+		//没有属性值
+		else {
 			for (var i = 0, length1 = eles.length; i < length1; i++) {
-				if (eles[i].hasAttribute(atr)) {
-					return eles[i];
+				if (eles[i].hasAttribute(attr)) {
+					elements = eles[i];
 				}
 			}
 		}
 	} else {
-		var ids = document.getElementsByTagName(selector);
-		return ids[0];
+		elements = root.getElementsByTagName(selector);
 	}
+	return elements;
 }
 
+function $(selector) {
+	//multiple queries
+	var result = [];
+	var parents = [];
+	if (selector.indexOf(" ") !== -1) {
+		//split selector by space
+		var selectors = selector.split(" ");
+		parents = domQuery(selectors[0]);
+		for (var i = 1, length1 = selectors.length; i < length1; i++) {
+			if (parents.length) {
+				parents = domQuery(selectors[i], parents[0]);
+			} else {
+				parents = domQuery(selectors[i], parents);
+			}
+		}
+		result = parents;
+	}
+	//single query
+	else {
+		var result = domQuery(selector, document);
+	}
+	if (result.length) {
+		return result[0];
+	} else {
+		return result;
+	}
+}
 
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
-	var myelement = element;
-	if (event === "click") {
-		myelement.onclick = listener(event);
+	if (element.addEventListener) {
+		element.addEventListener(event, listener, false)
 	}
 }
-
-// // 例如：
-function clicklistener(event) {
-	//...
-	if (event === "click") {
-		alert("clicking");
-	}
-
-}
-
-addEvent($("#doma"), "click", clicklistener);
 
 // 移除element对象对于event事件发生时执行listener的响应
 function removeEvent(element, event, listener) {
-	// your implement
+	if (element.removeEventListener) { //标准
+		element.removeEventListener(event, listener, false);
+	}
 }
 
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+	addEvent(element, 'click', listener);
+}
 
-// // 实现一个简单的Query
-// function $(selector) {
-// 	//handle the combine query
-// 	var selectors = selector.split(" ");
-// 	var ids = new Array();
-// 	for (var i = 0, length1 = selectors.length; i < length1; i++) {
-// 		//multiple selectors
-// 		if (selectors.length > 1) {
-// 			for (var i = 0, length1 = selectors.length; i < length1; i++) {
-// 				switch (selectors.[i]) {
-// 					case "label_1":
-// 						// statements_1
-// 						break;
-// 					default:
-// 						// statements_def
-// 						break;
-// 				}
-// 			}
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+	addEvent(element, "keydown", function(e) {
+		if (e.keyCode === 13) {
+			listener();
+		}
+	});
+}
 
-// 		}
+$.on = function(selector, event, listener) {
+	return addEvent($(selector), event, listener);
+};
 
-// 		if (selectors[i].indexOf("#") != -1) {
-// 			//delete #
-// var text = selectors[i].replace(/^\#/, "");
-// ids[0] = document.getElementById(text);
-// 		} else if (selectors[i].indexOf(".") != -1) {
-// 			//delete .
-// 			var text = selectors[i].replace(/^\./, "");
-// 			ids = document.getElementsByClassName(text);
-// 		} else if (selectors[i].indexOf("[") != -1) {
-// 			//get all the elements
-// 			var eles = document.getElementsByTagName("*");
-// 			selectors[i] = selectors[i].replace(/^\[/, "");
-// 			selectors[i] = selectors[i].replace(/\]$/, "");
-// 			var dates = selectors[i].split("=");
-// 			var atr = dates[0];
-// 			var value = dates[1];
-// 			if (value) {
-// 				for (var i = 0, length1 = eles.length; i < length1; i++) {
-// 					if (eles[i].hasAttribute(atr)) {
-// 						if (eles[i].getAttribute(atr) == value) {
-// 							ids[0] = eles[i];
-// 						}
-// 					}
-// 				}
-// 			} else {
-// 				for (var i = 0, length1 = eles.length; i < length1; i++) {
-// 					if (eles[i].hasAttribute(atr)) {
-// 						ids[0] = eles[i];
-// 					}
-// 				}
+$.un = function(selector, event, listener) {
+	return removeEvent($(selector), event, listener);
+};
 
-// 			}
-// 		} else {
-// 			ids = document.getElementsByTagName(selectors[i]);
-// 		}
-// 	}
-// 	return ids[0];
-// }
+$.click = function(selector, listener) {
+	return addClickEvent($(selector), listener);
+};
 
-// // 可以通过id获取DOM对象，通过#标示，例如
-// $("#adom"); // 返回id为adom的DOM对象
+$.enter = function(selector, listener) {
+	return addEnterEvent($(selector), listener);
+};
 
-// // 可以通过tagName获取DOM对象，例如
-// $("a"); // 返回第一个<a>对象
+$.delegate = function(selector, tag, event, listener) {
+    return delegateEvent($(selector), tag, eventName, listener);
+};
 
-// // 可以通过样式名称获取DOM对象，例如
-// $(".classa"); // 返回第一个样式定义包含classa的对象
 
-// // 可以通过attribute匹配获取DOM对象，例如
-// $("[data-log]"); // 返回第一个包含属性data-log的对象
+var delegate = function(client, clientMethod) {
+	return function() {
+		return clientMethod.apply(client, arguments);
+	}
+}
 
-// $("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
-
-// // 可以通过简单的组合提高查询便利性，例如
-// $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+function delegateEvent(element, tag, eventName, listener) {
+	$.eventName(element, function(e) {
+		var e = e || window.event;　　　　
+		var target = e.target || e.srcElement;　　　　
+		if (target.nodeName.toLowerCase() === tag) {
+			//?????
+			listener.call(target, e);　　　　
+		}
+	});
+}
