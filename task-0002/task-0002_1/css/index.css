@@ -1,0 +1,17 @@
+.container {
+	width: 980px;
+	margin: 0 auto;
+}
+
+textarea {
+	display: block;
+}
+
+#show-hobby {
+	margin-top: 5px;
+}
+
+#err-info {
+	font-size: 12px;
+	color: red;
+}
