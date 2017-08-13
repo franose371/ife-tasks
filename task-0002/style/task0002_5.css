@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.block-container {
+	float: left;
+	margin: 20px 150px;
+	border: 1px solid black;
+	height: 300px;
+}
+
+.block {
+	width: 100px;
+	height: 40px;
+	background-color: red;
+	border-bottom: 1px solid black;
+}
+
+.container {
+	width: 980px;
+	margin: 100px auto;
+	height: 600px;
+}
+
+.block:hover {
+	cursor: move;
+}
