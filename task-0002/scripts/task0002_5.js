@@ -38,6 +38,8 @@ function fnDown(tag, left, top) {
 			tag.style.top = e.clientY - top + 'px';
 			if (parseInt(block_container[1].offsetLeft) - parseInt(tag.style.left) < tag.offsetWidth/2) {
 				tag.style.opacity = '1';
+			} else {
+				tag.style.opacity = '0.5';
 			}
 		}
 	}, false);

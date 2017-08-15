@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Input Hint</title>
+	<style type="text/css">
+		#input-text {
+			outline: none;
+			padding-left: 5px;
+		}
+		.container {
+			width: 980px;
+			margin: 0 auto;
+			position: relative;
+		}
+		#hint-list {
+			border: 1px solid #ccc;
+			width: 250px;
+			margin-top: 0;
+			padding: 0;
+			text-indent: 10px;
+		}
+		ul {
+			list-style: none;
+			font-weight: normal;
+		}
+
+		ul li:hover {
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<form id="hint-input"> 
+	<span>输入：</span>
+	<input type="text" id="input-text">
+	</form>
+
+		<ul id="hint-list" style="display: none;">
+			<li></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="task0002_4.js"></script>	
+</body>
+</html>
