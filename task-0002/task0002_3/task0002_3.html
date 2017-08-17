@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style type="text/css">
+		html,body,div,img,span,a{
+			margin: 0;
+			padding: 0;
+		}
+		#slideshow-container {
+			position: relative;
+			width: 200px;
+			height: 400px;
+			overflow: hidden;
+		}
+		#slide-list {
+			position: absolute;
+			width: 1400px;
+			height: 400px;
+		}
+		#slide-list img {
+			width: 200px;
+			height: 400px;
+			display: block;
+			float: left;
+		}
+		#slide-buttons {
+			height: 10px;
+			width: 130px;
+			position: absolute;
+			bottom: 10px;
+			left: 40px;
+		}
+		#slide-buttons span{
+			width: 10px;
+			height: 10px;
+			background-color: #ccc;
+			margin-right: 10px;
+			display: inline-block;
+			border-radius: 50%;
+			border: 1px solid #fff;
+		}
+		#slide-buttons .slide-on {
+			background-color: orangered;
+		}
+		#slide-buttons span:hover {
+			background-color: orangered;
+		}
+		.slide-arrow {
+			width: 50px;
+			height: 50px;
+			background-color: rgba(192, 192, 192, 0.5);
+			display: block;
+			position: absolute;
+			text-decoration: none;
+			color: white;
+			font-size: 40px;
+			line-height: 45px;
+			text-align: center;
+			cursor: pointer;
+			display: none;
+		}
+		.slide-arrow:hover {
+			background-color: rgba(192, 192, 192, 0.7)
+		}
+		.slide-arrow-prev {
+			left: 0;
+			bottom: 50%;
+		}
+		.slide-arrow-next {
+			right: 0;
+			bottom: 50%;
+		}
+	</style>
+</head>
+<body>
+<div id="slideshow-container">
+	<div id="slide-list" style="left:-200px">
+		<img src="image/5.jpg" alt="5">
+		<img src="image/1.jpg" alt="1">
+		<img src="image/2.jpg" alt="2">
+		<img src="image/3.jpg" alt="3">
+		<img src="image/4.jpg" alt="4">
+		<img src="image/5.jpg" alt="5">
+		<img src="image/1.jpg" alt="1">
+	</div>
+	<div id="slide-buttons">
+		<span index="1" class="slide-on"></span>
+		<span index="2"></span>
+		<span index="3"></span>
+		<span index="4"></span>
+		<span index="5"></span>
+	</div>
+	<a class="slide-arrow slide-arrow-prev">&lt</a>
+	<a class="slide-arrow slide-arrow-next">&gt</a>
+</div>
+<script type="text/javascript" src="task0002_3.js"></script>
+</body>
+</html>
