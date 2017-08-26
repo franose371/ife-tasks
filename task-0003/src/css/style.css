@@ -1,0 +1,109 @@
+html {
+	height: 100%;
+}
+body {
+	font-size: 62.5%;
+	margin: 0;
+	padding: 0;
+	height: 100%
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+
+h1,h2,h3{
+	font-weight: normal;
+}
+
+.container {
+	font-size: 1.4em;
+	height: 100%;
+}
+
+h1 {
+	color: #A1A1A1;
+	background-color: #DDD;
+	margin: 0;
+	height: 10%;
+	line-height: 200%;
+	padding-left: 2%;
+}
+
+.flex-container {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	height: 90%;
+}
+
+@media (max-width: 800px) {
+	.container{
+		width: 800px;
+		overflow:auto;
+	}
+}
+	
+
+#catalog {
+	width: 200px;
+	background-color: #f2f2f2;
+}
+
+
+#todo-list {
+	width: 200px;
+}
+
+#todo-item {
+	flex: 1;
+	-webkit-flex: 1;
+}
+
+li {
+	list-style: none;
+}
+
+#todo-list .list-title {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 1.2em;
+	margin-right: .5em;
+}
+
+#list-title-container {
+	background-color: #ededed;
+}
+
+#todo-list ul {
+	padding: 0;
+	margin: 0;
+	background-color: #fafaee;
+}
+
+#todo-list li {
+	background-color: white;
+}
+
+#item-title {
+	background-color: #f2f2f2;
+}
+
+#item-title h2{
+	display: inline-block;
+}
+
+#title-text {
+	background-color: #f2f2f2;
+	margin: 0;
+	padding: 0;
+}
+
+#item-date {
+	background-color: #fafaee;
+}
+
+#item-content {
+	background-color: white;
+}

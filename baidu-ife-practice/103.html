@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>基础JavaScript练习（一）</title>
+	<style type="text/css">
+		.number {
+			display: block;
+			width: 20px;
+			height: 30px;
+			margin-right: 10px;
+			background-color: red;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="input" id="input">
+	<button id="left-in">左侧入</button>
+	<button id="right-in">右侧入</button>
+	<button id="left-out">左侧出</button>
+	<button id="right-out">右侧出</button>
+	<div id="display">
+		<span class="number">12</span>
+		<span class="number">22</span>
+		<span class="number">44</span>
+	</div>
+	<script type="text/javascript">
+	var oShow = document.getElementById("display");
+	var oInput = document.getElementById("input");
+		document.getElementById("left-in").addEventListener("click", function () {
+			if (document.getElementsByClassName("number")[0]) {
+				var newNode = document.createElement("span");
+				newNode.className = "number";
+				newNode.innerText = oInput.value;
+				oShow.insertBefore(newNode,document.getElementsByClassName("number")[0]);
+			}else {
+				oShow.innerHTML = `<span class="number">${oInput.value}</span>`;
+			}
+		}, false);
+		document.getElementById("right-in").addEventListener("click", function () {
+			oShow.innerHTML+=`<span class="number">${oInput.value}</span>`
+		}, false);
+
+		document.getElementById("left-out").addEventListener("click", function () {
+			var delEle = oShow.children[0];
+			var parent = delEle.parentNode;
+			parent.removeChild(delEle);
+		}, false);
+
+		document.getElementById("right-out").addEventListener("click", function () {
+			var delEle = oShow.children[oShow.children.length-1];
+			var parent = delEle.parentNode;
+			parent.removeChild(delEle);
+		}, false);
+
+		document.getElementById("display").addEventListener("click", function(e){
+			e = e || window.event;
+			var target = e.target || e.srcElement;
+			var parent = target.parentNode;
+			parent.removeChild(target);
+		}, false);
+	</script>
+</body>
+</html>

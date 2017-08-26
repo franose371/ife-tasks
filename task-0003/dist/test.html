@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>GTD Tools</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/icon-style.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1>GTD Tools</h1>
+		<div class="flex-container">
+			<div id="catalog">
+				<h2>所有任务(<span id="all-task-num">11</span>)</h2>
+				<h3>分类列表</h3>
+				<div id="task-list">
+					<ul class="task-folder">
+					<span class="icon-folder-open"></span>百度IFE项目(<span class="parent-task-num">10</span>)
+						<li><span class="icon-file-empty"></span>task1（<span class="child-task-num">6</span>）</li>
+						<li><span class="icon-file-empty"></span>task2（<span class="child-task-num">4</span>）</li>
+					</ul>
+					<ul class="task-folder">
+						<span class="icon-folder-open">毕业设计(<span class="parent-task-num">1</span>)
+						<li style="display: none"><span class="icon-file-empty"></span>设计1（<span class="child-task-num">1</span>）</li>
+					</ul>
+					<ul class="task-folder">
+						<span class="icon-folder-open">社团活动(<span class="parent-task-num">0</span>)
+					</ul>
+					<ul class="task-folder">
+						<span class="icon-folder-open">家庭生活(<span class="parent-task-num">0</span>)<span class="icon-cross"></span>
+					</ul>
+					<ul class="task-folder">
+						<span class="icon-folder-open">默认分类(<span class="parent-task-num">0</span>)
+					</ul>
+					<span class="icon-plus"></span><span class="add-class">新增分类</span>
+				</div>
+			</div>
+			<div id="todo-list">
+				<div id="all">
+				<div id="list-title-container"><h3 class="list-title">所有</h3><h3 class="list-title">未完成</h3><h3 class="list-title">已完成</h3></div>
+					<ul>
+						<span class="date-title">2015-04-28</span>
+						<li>to-do 1</li>
+						<li>to-do 2</li>
+					</ul>
+					<ul>
+						<span class="date-title">2015-04-29</span>
+						<li>to-do 3</li>
+						<li>to-do 4</li>
+					</ul>
+					<ul>
+						<span class="date-title">2015-04-30</span>
+						<li>to-do 5</li>
+						<li>to-do 6</li>
+					</ul>
+					<ul>
+						<span class="date-title">2015-05-04</span>
+						<li>to-do 7</li>
+					</ul>
+				</div>
+				<div id="unfinish" style="display: none">
+					<ul>
+						2015-04-30
+						<li>to-do 5</li>
+						<li>to-do 6</li>
+					</ul>
+					<ul>
+						2015-05-04
+						<li>to-do 7</li>
+					</ul>
+				</div>
+				<div id="finished" style="display: none">
+					
+					<ul>
+						2015-04-28
+						<li>to-do 1</li>
+						<li>to-do 2</li>
+					</ul>
+					<ul>
+						2015-04-29
+						<li>to-do 3</li>
+						<li>to-do 4</li>
+					</ul>
+				</div>
+				<span class="icon-plus"></span><span class="add-task">添加任务</span>
+			</div>
+			<div id="todo-item">
+				<div id="item-title">
+					<h2 id="title-text">to-do 6</h2>
+					<span class="icon-checkmark"></span>
+					<span class="icon-pencil"></span>
+				</div>
+				<div id="item-date">任务日期<span class="task-date">2015-04-30</span></div>
+				<div id="item-content">完成task3的编码工作</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

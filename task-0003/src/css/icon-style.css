@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'todo-icon';
+  src:  url('fonts/todo-icon.eot?nz3s1w');
+  src:  url('fonts/todo-icon.eot?nz3s1w#iefix') format('embedded-opentype'),
+    url('fonts/todo-icon.ttf?nz3s1w') format('truetype'),
+    url('fonts/todo-icon.woff?nz3s1w') format('woff'),
+    url('fonts/todo-icon.svg?nz3s1w#todo-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'todo-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-file-empty:before {
+  content: "\e924";
+}
+.icon-folder-open:before {
+  content: "\e930";
+}
+.icon-clipboard:before {
+  content: "\e9b8";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
